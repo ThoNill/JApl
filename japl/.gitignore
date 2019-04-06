@@ -1,0 +1,10 @@
+/target/
+/bin/
+/csv.erg
+/test.mv.db
+/test.trace.db
+/.scannerwork/
+/.settings/
+/.sonar/
+/.classpath
+/.project
