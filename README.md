@@ -1,39 +1,24 @@
-Vorlagen
-=====
 
-Generelles Vorgehen, aus Vorlagen (Templates) Dateien zu erzeugen.
+JApl ist eine APl ähnliche Sprache, die auf Java basiert.
 
-Aufgrund einesvorgegebenen  Modells sollen Dateien erzeugt werden.
+APL ist eine frühe Programmiersprache, die auf Arrays 
+basiert. Die Programme können mit einem eigenen Zeichsatz 
+sehr komprimiert ausgedrückt werden.
 
-Dazu werden Vorlagen benutzt. Die Vorlagen benutzen aber nicht direkt
-das Modell, sondern VorlagenModelle, die von VorlagenModellFabriken 
-aus dem Model erzeugt werden. Die Vorlagen selbst werden durch 
-VorlagenFabriken erzeugt.
+Ich habe die Idee, die APL zugrunde liegt, hier um reactive Streams
+erweitert, d.h.  nicht nur Arrays werden verarbeitet, sondern auch 
+Streams zusammengebaut.
 
-Jede Vorlage steuert die Erzeugung einer Datei aus dem VorlagenModell.
-Die Vorlage gibt auch den Dateinamen und Verzeichnis an, wohin die 
-Datei geschrieben werden soll.
+Ergänzend dazu habe ich als Parser antlr als Templatesprache stringtemplate 
+und Für Matrizen Colt eingesetzt. 
+Als reactive Streams Implementierung setze ich Reactor ein.
 
-Die Modelle und Templates werden von einer  VorlagenMaschine erzeugt.
+APL wird normal zeilenweise von rechts nach links abgearbeitet.
+Wobei Arrays aber dann doch wieder von links nach rechts gelesen werden.
+Ich habe einen Modus hinzugefügt, der von links nach rechts arbeitet.
+Die Richtung von Arrays und Funktionen, Operationen ist dann gleich
+und die Schreibrichtung enspricht der Abfolge der Abarbeitung.
+Das scheint mir konsistenter zu sein.
 
-Diese legt drei Verzeichnisse fest, von denen die anderen Verzeichnisse ausgehen.
-
-BasisModelVerzeichnis, das Oberverzeichnis in dem die Modelbeschreibungen liegen.
-BasisVorlagenVerzeichnis, das Oberverzeichnis, in den die Vorlagenbeschreibungen liegen.
-BasisZielVerzeichnis, das Oberverzeichnis in das die erzeugten Dateien gestellt werden.
-
-Die VorlagenMaschine besteht weiter aus einer VorlagenFabrik und einer ModelFabrik.
-
-Es kann mehrere Vorlagen geben. Die Vorlagen und Zuordnungen zu Dateien werden
-in einer VorlagenDefinition verwaltet.
-
-Diese Vorlagendefinition umfasst jeweils eine VorlagenBeschreibung, anhand derer eine
-Vorlage erzeugt werden kann. Meist ein Dateiname. 
-
-Weiter umfasst diese Struktur 
-ein ModelVerzeichnis, als Zwischenverzeichnis  für die VorlagenModelle
-ein VorlageVerzeichnis, als Zwischenverzeichnis  für die Vorlagen
-ein Zielverzeichnis, als Zwischenverzeichnis  für die Ausgabedateien
-und eine VorlagenModellFabrik.
 
 
