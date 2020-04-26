@@ -21,4 +21,5 @@ und die Schreibrichtung enspricht der Abfolge der Abarbeitung.
 Das scheint mir konsistenter zu sein.
 
 
+ mvn clean antlr4:antlr4 compile test install
 
